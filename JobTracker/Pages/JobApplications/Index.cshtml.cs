@@ -15,6 +15,9 @@ namespace JobTracker.Pages.JobApplications
         [BindProperty(SupportsGet = true)]
         public string searchTerm { get; set; }
 
+        [TempData]
+        public string Message { get; set; }
+
         public IndexModel(IJobData jobData)
         {
             this.jobData = jobData;

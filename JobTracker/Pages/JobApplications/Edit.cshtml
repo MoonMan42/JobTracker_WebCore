@@ -1,0 +1,33 @@
+﻿@page "{JobId:int?}"
+@model JobTracker.Pages.JobApplications.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editing @Model.job.JobTitle</h2>
+
+
+
+<form method="post">
+    <input type="hidden" asp-for="job.Id" />
+
+    <div class="form-group">
+        <label asp-for="job.JobTitle"></label>
+        <input asp-for="job.JobTitle" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.JobTitle"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.Description"></label>
+        <input asp-for="job.Description" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.Description"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.DateApplied"></label>
+        <input asp-for="job.DateApplied" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.DateApplied"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

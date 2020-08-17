@@ -10,12 +10,15 @@ namespace JobTracker.Core
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Job Title")]
         public string JobTitle { get; set; }
 
         [StringLength(500)]
         public string Description { get; set; }
 
         [Required]
-        public DateTime DateApplied { get; set; }
+        [Display(Name = "Date Applied")]
+        [DataType(DataType.Date)]
+        public DateTime DateApplied { get; set; } = DateTime.UtcNow;
     }
 }
