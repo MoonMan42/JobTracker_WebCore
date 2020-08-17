@@ -16,6 +16,7 @@ namespace JobTracker.Core
         [StringLength(500, ErrorMessage = "Limit to 500 words.")]
         public string Description { get; set; }
 
+        [Display(Name = "Job Requirements")]
         [StringLength(500, ErrorMessage = "Limit to 500 words.")]
         public string JobRequirement { get; set; }
 
@@ -24,6 +25,7 @@ namespace JobTracker.Core
         [DataType(DataType.Date)]
         public DateTime DateApplied { get; set; } = DateTime.UtcNow;
 
+        [Display(Name = "Applied Site")]
         [StringLength(100)]
         public string AppliedSite { get; set; }
 
@@ -40,9 +42,11 @@ namespace JobTracker.Core
         [Display(Name = "Is the job still active?")]
         public bool IsJobStillActive { get; set; } = true;
 
+        [Display(Name = "Comapny Name")]
         [StringLength(50)]
         public string CompanyName { get; set; }
 
+        [Display(Name = "Company Website")]
         [StringLength(200)]
         public string CompanyWebsite { get; set; }
     }

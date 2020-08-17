@@ -10,6 +10,7 @@ namespace JobTracker.Data
         JobApplication Delete(int id);
         JobApplication GetJobById(int id);
         IEnumerable<JobApplication> GetJobByName(string Name);
+        IEnumerable<JobApplication> GetOpenJobByName(string Name);
         JobApplication Update(JobApplication job);
     }
 }

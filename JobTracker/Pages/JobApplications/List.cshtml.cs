@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace JobTracker.Pages.JobApplications
 {
-    public class IndexModel : PageModel
+    public class ListModel : PageModel
     {
         private readonly IJobData jobData;
 
@@ -15,17 +15,14 @@ namespace JobTracker.Pages.JobApplications
         [BindProperty(SupportsGet = true)]
         public string searchTerm { get; set; }
 
-        [TempData]
-        public string Message { get; set; }
 
-        public IndexModel(IJobData jobData)
+        public ListModel(IJobData db)
         {
-            this.jobData = jobData;
+            jobData = db;
         }
-
         public void OnGet()
         {
-            jobs = jobData.GetOpenJobByName(searchTerm);
+            jobs = jobData.GetJobByName(searchTerm);
         }
     }
 }

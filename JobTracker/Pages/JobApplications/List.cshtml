@@ -1,10 +1,10 @@
 ﻿@page
-@model JobTracker.Pages.JobApplications.IndexModel
+@model JobTracker.Pages.JobApplications.ListModel
 @{
-    ViewData["Title"] = "Active Job";
+    ViewData["Title"] = "All Jobs";
 }
 
-<h2>Active Job Applications</h2>
+<h2>All Job Applications</h2>
 
 
 <div class="form-group">
@@ -24,13 +24,6 @@
     </div>
 </form>
 
-@if (Model.Message != null)
-{
-    <div class="alert alert-info">
-        @Model.Message
-    </div>
-}
-
 <table class="table table-hover table-striped">
     <tr>
         <th>Job Title</th>
@@ -48,6 +41,5 @@
         </tr>
     }
 </table>
-
 
 

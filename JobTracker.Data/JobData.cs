@@ -49,7 +49,18 @@ namespace JobTracker.Data
         {
             return _context.JobApplications.Find(id);
         }
+
         public IEnumerable<JobApplication> GetJobByName(string name)
+        {
+            var query = from j in _context.JobApplications
+                        where (string.IsNullOrEmpty(name) || j.JobTitle.ToLower().StartsWith(name.ToLower()))
+                        orderby j.DateApplied descending
+                        select j;
+
+            return query;
+        }
+
+        public IEnumerable<JobApplication> GetOpenJobByName(string name)
         {
             var query = from j in _context.JobApplications
                         where (string.IsNullOrEmpty(name) || j.JobTitle.ToLower().StartsWith(name.ToLower()))

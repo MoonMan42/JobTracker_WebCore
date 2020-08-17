@@ -10,11 +10,13 @@
 
 <form method="post">
 
-    <button type="submit" class="btn btn-primary" asp-page-handler="Edit">Save</button>
+    <button type="submit" class="btn btn-primary" asp-page-handler="Edit">@(Model.job.Id > 0 ? "Save":"Add")</button>
     <button type="submit" class="btn btn-danger" asp-page-handler="Delete"
             onclick="return confirm ('Are your sure you wish to delete this job?')">
         Delete
     </button>
+
+    <br />
 
     <input type="hidden" asp-for="job.Id" />
 
@@ -29,6 +31,16 @@
         <input asp-for="job.JobTitle" class="form-control" />
         <span class="text-danger" asp-validation-for="job.JobTitle"></span>
     </div>
+
+    <div class="form-group">
+        <label asp-for="job.IsJobStillActive"></label>
+        <select asp-for="job.IsJobStillActive" class="form-control">
+            <option value="true" selected="selected">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <span class="text-danger" asp-validation-for="job.IsJobStillActive"></span>
+    </div>
+
 
     <div class="form-group">
         <label asp-for="job.Description"></label>
@@ -69,14 +81,7 @@
         <span class="text-danger" asp-validation-for="job.CallBackDate"></span>
     </div>
 
-    <div class="form-group">
-        <label asp-for="job.IsJobStillActive"></label>
-        <select asp-for="job.IsJobStillActive" class="form-control">
-            <option value="true" selected="selected">Yes</option>
-            <option value="false">No</option>
-        </select>
-        <span class="text-danger" asp-validation-for="job.IsJobStillActive"></span>
-    </div>
+
 
     <div class="form-group">
         <label asp-for="job.CompanyName"></label>
@@ -90,8 +95,9 @@
         <span class="text-danger" asp-validation-for="job.CompanyWebsite"></span>
     </div>
 
+    <br />
 
-    <button type="submit" class="btn btn-primary" asp-page-handler="Edit">Save</button>
+    <button type="submit" class="btn btn-primary" asp-page-handler="Edit">@(Model.job.Id > 0 ? "Save":"Add") </button>
     <button type="submit" class="btn btn-danger" asp-page-handler="Delete"
             onclick="return confirm ('Are your sure you wish to delete this job?')">
         Delete
