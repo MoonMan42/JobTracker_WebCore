@@ -13,8 +13,11 @@ namespace JobTracker.Core
         [Display(Name = "Job Title")]
         public string JobTitle { get; set; }
 
-        [StringLength(500)]
+        [StringLength(500, ErrorMessage = "Limit to 500 words.")]
         public string Description { get; set; }
+
+        [StringLength(500, ErrorMessage = "Limit to 500 words.")]
+        public string JobRequirement { get; set; }
 
         [Required]
         [Display(Name = "Date Applied")]
@@ -27,11 +30,20 @@ namespace JobTracker.Core
         [Display(Name = "Did they call back?")]
         public bool CallBack { get; set; } = false;
 
+        [Display(Name = "What was the last update.")]
+        public string LastUpdate { get; set; }
+
         [Display(Name = "When did they call Back?")]
         [DataType(DataType.Date)]
-        public DateTime CallBackDate { get; set; }
+        public DateTime? CallBackDate { get; set; } = DateTime.UtcNow;
 
         [Display(Name = "Is the job still active?")]
-        public bool IsJobStillActive { get; set; } = false;
+        public bool IsJobStillActive { get; set; } = true;
+
+        [StringLength(50)]
+        public string CompanyName { get; set; }
+
+        [StringLength(200)]
+        public string CompanyWebsite { get; set; }
     }
 }

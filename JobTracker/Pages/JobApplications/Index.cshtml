@@ -24,32 +24,30 @@
     </div>
 </form>
 
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">
+        @Model.Message
+    </div>
+}
 
 <table class="table table-hover table-striped">
+    <tr>
+        <th>Job Title</th>
+        <th>Date Applied</th>
+        <th>Call Back</th>
+    </tr>
+
     @foreach (var j in Model.jobs)
     {
         <tr>
-            <td>@j.JobTitle</td>
+            <td><a asp-page="./Edit" asp-route-jobId="@j.Id">@j.JobTitle </a></td>
             <td>@j.DateApplied</td>
-            @*<td>
-                    <a class="btn btn-lg" asp-page="./Details" asp-route-jobId="@j.Id">
-                        <i class="glyphicon glyphicon-zoom-in"></i>
-                    </a>
-                </td>*@
-            <td>
-                <a class="btn btn-lg" asp-page="./Edit" asp-route-jobId="@j.Id">
-                    <i class="glyphicon glyphicon-edit"></i>
-                </a>
-            </td>
+            <td>@(j.CallBack? "Yes":"No")</td>
+            <td>@(j.IsJobStillActive? "Yes":"No")</td>
         </tr>
     }
 </table>
 
 
 
-@if (Model.Message != null)
-{
-    <div class="alert alert-info">
-        @Model.Message
-    </div>
-} 

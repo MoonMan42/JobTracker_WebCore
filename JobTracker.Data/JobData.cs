@@ -52,7 +52,9 @@ namespace JobTracker.Data
         public IEnumerable<JobApplication> GetJobByName(string name)
         {
             var query = from j in _context.JobApplications
-                        where string.IsNullOrEmpty(name) || j.JobTitle.ToLower().StartsWith(name.ToLower())
+                        where (string.IsNullOrEmpty(name) || j.JobTitle.ToLower().StartsWith(name.ToLower()))
+                                && j.IsJobStillActive == true
+
                         orderby j.DateApplied descending
                         select j;
 

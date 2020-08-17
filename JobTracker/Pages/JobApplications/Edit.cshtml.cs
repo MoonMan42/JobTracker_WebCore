@@ -33,7 +33,7 @@ namespace JobTracker.Pages.JobApplications
             }
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPostEdit()
         {
             if (!ModelState.IsValid)
             {
@@ -54,6 +54,21 @@ namespace JobTracker.Pages.JobApplications
             jobData.Commit();
 
             return RedirectToPage("./Index", new { jobId = job.Id });
+        }
+
+        public IActionResult OnPostDelete()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            jobData.Delete(job.Id);
+            jobData.Commit();
+
+            TempData["Message"] = "Job removed!";
+
+            return RedirectToPage("./Index");
         }
     }
 }

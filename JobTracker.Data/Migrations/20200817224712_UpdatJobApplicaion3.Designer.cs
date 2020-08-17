@@ -4,14 +4,16 @@ using JobTracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JobTracker.Data.Migrations
 {
     [DbContext(typeof(JobDbContext))]
-    partial class JobDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200817224712_UpdatJobApplicaion3")]
+    partial class UpdatJobApplicaion3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,16 +45,16 @@ namespace JobTracker.Data.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(500);
 
-                    b.Property<bool>("IsJobStillActive");
+                    b.Property<bool>("GetTheJob");
 
-                    b.Property<string>("JobRequirement")
-                        .HasMaxLength(500);
+                    b.Property<bool>("IsJobStillActive");
 
                     b.Property<string>("JobTitle")
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<string>("LastUpdate");
+                    b.Property<string>("Requirement")
+                        .HasMaxLength(500);
 
                     b.HasKey("Id");
 
