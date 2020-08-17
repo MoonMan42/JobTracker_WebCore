@@ -20,5 +20,18 @@ namespace JobTracker.Core
         [Display(Name = "Date Applied")]
         [DataType(DataType.Date)]
         public DateTime DateApplied { get; set; } = DateTime.UtcNow;
+
+        [StringLength(100)]
+        public string AppliedSite { get; set; }
+
+        [Display(Name = "Did they call back?")]
+        public bool CallBack { get; set; } = false;
+
+        [Display(Name = "When did they call Back?")]
+        [DataType(DataType.Date)]
+        public DateTime CallBackDate { get; set; }
+
+        [Display(Name = "Is the job still active?")]
+        public bool IsJobStillActive { get; set; } = false;
     }
 }
