@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobTracker", "JobTracker\JobTracker.csproj", "{35D81122-2598-4761-AF21-7DB9549E2400}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobTracker", "JobTracker\JobTracker.csproj", "{35D81122-2598-4761-AF21-7DB9549E2400}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobTracker.Core", "JobTracker.Core\JobTracker.Core.csproj", "{2B2501DB-4D85-4AEC-874E-E8B497CBCD28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobTracker.Core", "JobTracker.Core\JobTracker.Core.csproj", "{2B2501DB-4D85-4AEC-874E-E8B497CBCD28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobTracker.Data", "JobTracker.Data\JobTracker.Data.csproj", "{080E6AFA-DDCE-4B38-8AC4-CBF0FBB1E3F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobTracker.Data", "JobTracker.Data\JobTracker.Data.csproj", "{080E6AFA-DDCE-4B38-8AC4-CBF0FBB1E3F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
