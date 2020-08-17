@@ -25,17 +25,17 @@
 </form>
 
 
-<table class="table table-hover">
+<table class="table table-hover table-striped">
     @foreach (var j in Model.jobs)
     {
         <tr>
-            <td>j.JobTitle</td>
-            <td>j.DateApplied</td>
-            <td>
-                <a class="btn btn-lg" asp-page="./Details" asp-route-jobId="@j.Id">
-                    <i class="glyphicon glyphicon-zoom-in"></i>
-                </a>
-            </td>
+            <td>@j.JobTitle</td>
+            <td>@j.DateApplied</td>
+            @*<td>
+                    <a class="btn btn-lg" asp-page="./Details" asp-route-jobId="@j.Id">
+                        <i class="glyphicon glyphicon-zoom-in"></i>
+                    </a>
+                </td>*@
             <td>
                 <a class="btn btn-lg" asp-page="./Edit" asp-route-jobId="@j.Id">
                     <i class="glyphicon glyphicon-edit"></i>
