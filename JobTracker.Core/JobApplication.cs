@@ -13,11 +13,11 @@ namespace JobTracker.Core
         [Display(Name = "Job Title")]
         public string JobTitle { get; set; }
 
-        [StringLength(500, ErrorMessage = "Limit to 500 words.")]
+        [StringLength(1000, ErrorMessage = "Limit to 500 words.")]
         public string Description { get; set; }
 
         [Display(Name = "Job Requirements")]
-        [StringLength(500, ErrorMessage = "Limit to 500 words.")]
+        [StringLength(1000, ErrorMessage = "Limit to 500 words.")]
         public string JobRequirement { get; set; }
 
         [Required]
@@ -47,7 +47,6 @@ namespace JobTracker.Core
         public string CompanyName { get; set; }
 
         [Display(Name = "Company Website")]
-        [StringLength(200)]
         public string CompanyWebsite { get; set; }
     }
 }
