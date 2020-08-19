@@ -46,7 +46,16 @@ namespace JobTracker.Core
         [StringLength(50)]
         public string CompanyName { get; set; }
 
+        [Display(Name = "Person who reached out")]
+        public string CompanyContactName { get; set; }
+
         [Display(Name = "Company Website")]
         public string CompanyWebsite { get; set; }
+
+        [Display(Name = "Company Phone Contact")]
+        public string CompanyPhone { get; set; }
+
+        [Display(Name = "Company Email Contact")]
+        public string CompanyEmail { get; set; }
     }
 }

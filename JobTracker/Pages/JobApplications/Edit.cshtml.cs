@@ -33,6 +33,7 @@ namespace JobTracker.Pages.JobApplications
             }
         }
 
+        [ValidateAntiForgeryToken]
         public IActionResult OnPostEdit()
         {
             if (!ModelState.IsValid)
@@ -56,6 +57,7 @@ namespace JobTracker.Pages.JobApplications
             return RedirectToPage("./Index", new { jobId = job.Id });
         }
 
+        [ValidateAntiForgeryToken]
         public IActionResult OnPostDelete()
         {
             if (!ModelState.IsValid)

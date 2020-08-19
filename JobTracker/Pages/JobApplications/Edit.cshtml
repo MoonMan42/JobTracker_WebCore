@@ -90,9 +90,27 @@
     </div>
 
     <div class="form-group">
+        <label asp-for="job.CompanyContactName"></label>
+        <input asp-for="job.CompanyContactName" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.CompanyContactName"></span>
+    </div>
+
+    <div class="form-group">
         <label asp-for="job.CompanyWebsite"></label>
         <input asp-for="job.CompanyWebsite" class="form-control" />
         <span class="text-danger" asp-validation-for="job.CompanyWebsite"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.CompanyPhone"></label>
+        <input asp-for="job.CompanyPhone" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.CompanyPhone"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.CompanyEmail"></label>
+        <input asp-for="job.CompanyEmail" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.CompanyEmail"></span>
     </div>
 
     <br />
