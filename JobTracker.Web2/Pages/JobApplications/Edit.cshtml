@@ -1,0 +1,123 @@
+﻿@page "{JobId:int?}"
+@model             EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editing @Model.job.JobTitle</h2>
+
+
+
+<form method="post">
+
+    <button type="submit" class="btn btn-primary" asp-page-handler="Edit">@(Model.job.Id > 0 ? "Save":"Add")</button>
+    <button type="submit" class="btn btn-danger" asp-page-handler="Delete"
+            onclick="return confirm ('Are your sure you wish to delete this job?')">
+        Delete
+    </button>
+
+    <br />
+
+    <input type="hidden" asp-for="job.Id" />
+
+    <div class="form-group">
+        <label asp-for="job.DateApplied"></label>
+        <input asp-for="job.DateApplied" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.DateApplied"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.JobTitle"></label>
+        <input asp-for="job.JobTitle" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.JobTitle"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.IsJobStillActive"></label>
+        <select asp-for="job.IsJobStillActive" class="form-control">
+            <option value="true" selected="selected">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <span class="text-danger" asp-validation-for="job.IsJobStillActive"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="job.Description"></label>
+        <textarea asp-for="job.Description" class="form-control" maxlength="500" rows="10"></textarea>
+        <span class="text-danger" asp-validation-for="job.Description"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.JobRequirement"></label>
+        <textarea asp-for="job.JobRequirement" class="form-control" maxlength="500" rows="10"></textarea>
+        <span class="text-danger" asp-validation-for="job.JobRequirement"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.AppliedSite"></label>
+        <input asp-for="job.AppliedSite" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.AppliedSite"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.CallBack"></label>
+        <select asp-for="job.CallBack" class="form-control">
+            <option value="true">Yes</option>
+            <option value="false" selected="selected">No</option>
+        </select>
+        <span class="text-danger" asp-validation-for="job.CallBack"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.LastUpdate"></label>
+        <input asp-for="job.LastUpdate" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.LastUpdate"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.CallBackDate"></label>
+        <input asp-for="job.CallBackDate" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.CallBackDate"></span>
+    </div>
+
+
+
+    <div class="form-group">
+        <label asp-for="job.CompanyName"></label>
+        <input asp-for="job.CompanyName" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.CompanyName"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.CompanyContactName"></label>
+        <input asp-for="job.CompanyContactName" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.CompanyContactName"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.CompanyWebsite"></label>
+        <input asp-for="job.CompanyWebsite" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.CompanyWebsite"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.CompanyPhone"></label>
+        <input asp-for="job.CompanyPhone" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.CompanyPhone"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="job.CompanyEmail"></label>
+        <input asp-for="job.CompanyEmail" class="form-control" />
+        <span class="text-danger" asp-validation-for="job.CompanyEmail"></span>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary" asp-page-handler="Edit">@(Model.job.Id > 0 ? "Save":"Add") </button>
+    <button type="submit" class="btn btn-danger" asp-page-handler="Delete"
+            onclick="return confirm ('Are your sure you wish to delete this job?')">
+        Delete
+    </button>
+</form>
