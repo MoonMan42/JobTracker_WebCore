@@ -72,5 +72,30 @@ namespace JobTracker.Data
             return query;
         }
 
+        public int GetOpenJobsTotal()
+        {
+            var query = from j in _context.JobApplications select j;
+
+            return query.Count();
+        }
+
+        public int GetActiveJobsTotal()
+        {
+            var query = from j in _context.JobApplications
+                        where j.IsJobStillActive == true
+                        select j;
+
+            return query.Count();
+        }
+
+        public int GetCallBackTotal()
+        {
+            var query = from j in _context.JobApplications
+                        where j.CallBack == true
+                        select j;
+
+            return query.Count();
+        }
+
     }
 }

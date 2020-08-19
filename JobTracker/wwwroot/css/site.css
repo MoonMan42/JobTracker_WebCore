@@ -35,3 +35,9 @@ body {
         display: none;
     }
 }
+
+
+/*Personal edits*/
+.scoreboard {
+    text-align: center;
+}

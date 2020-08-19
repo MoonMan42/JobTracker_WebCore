@@ -11,6 +11,9 @@ namespace JobTracker.Data
         JobApplication GetJobById(int id);
         IEnumerable<JobApplication> GetJobByName(string Name);
         IEnumerable<JobApplication> GetOpenJobByName(string Name);
+        int GetOpenJobsTotal();
+        int GetActiveJobsTotal();
+        int GetCallBackTotal();
         JobApplication Update(JobApplication job);
     }
 }
