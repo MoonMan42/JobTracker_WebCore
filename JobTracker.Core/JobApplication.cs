@@ -26,7 +26,6 @@ namespace JobTracker.Core
         public DateTime DateApplied { get; set; } = DateTime.UtcNow;
 
         [Display(Name = "Applied Site")]
-        [StringLength(100)]
         public string AppliedSite { get; set; }
 
         [Display(Name = "Did they call back?")]
