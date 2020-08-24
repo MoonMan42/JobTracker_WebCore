@@ -1,5 +1,5 @@
 ﻿@page "{JobId:int?}"
-@model             EditModel
+@model EditModel
 @{
     ViewData["Title"] = "Edit";
 }
@@ -58,6 +58,12 @@
         <label asp-for="job.AppliedSite"></label>
         <input asp-for="job.AppliedSite" class="form-control" />
         <span class="text-danger" asp-validation-for="job.AppliedSite"></span>
+    </div>
+
+    <div class="form-group ">
+        <a href="@Model.job.AppliedSite.ToString()" target="_blank">
+            <label class="btn btn-default">Open</label>
+        </a>
     </div>
 
     <div class="form-group">
