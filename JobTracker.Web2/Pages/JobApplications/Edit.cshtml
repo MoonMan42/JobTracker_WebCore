@@ -4,7 +4,14 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editing @Model.job.JobTitle</h2>
+@if (Model.job.Id == 0)
+{
+    <h2>Adding New Job</h2>
+}
+else
+{
+    <h2>Editing @Model.job.JobTitle</h2>
+}
 
 
 
