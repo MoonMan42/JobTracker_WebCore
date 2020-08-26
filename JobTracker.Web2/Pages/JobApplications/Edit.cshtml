@@ -4,16 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-@if (Model.job.Id == 0)
-{
-    <h2>Adding New Job</h2>
-}
-else
-{
-    <h2>Editing @Model.job.JobTitle</h2>
-}
-
-
+<h2>@(Model.job.Id > 0 ? $"Editing {Model.job.JobTitle}" : "Adding New")</h2>
 
 <form method="post">
 
