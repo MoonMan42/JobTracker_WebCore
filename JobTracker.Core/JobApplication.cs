@@ -36,7 +36,7 @@ namespace JobTracker.Core
 
         [Display(Name = "When did they call Back?")]
         [DataType(DataType.Date)]
-        public DateTime? CallBackDate { get; set; } = DateTime.UtcNow;
+        public DateTime? CallBackDate { get; set; }
 
         [Display(Name = "Is the job still active?")]
         public bool IsJobStillActive { get; set; } = true;
