@@ -43,6 +43,7 @@
     {
         <tr>
             <td><a asp-page="./Edit" asp-route-jobId="@j.Id">@j.JobTitle </a></td>
+            <td>@j.CompanyName</td>
             <td>@j.DateApplied.ToString("MM/dd/yyyy")</td>
             <td>@(j.CallBack? "Yes":"No")</td>
             <td>@(j.IsJobStillActive? "Yes":"No")</td>

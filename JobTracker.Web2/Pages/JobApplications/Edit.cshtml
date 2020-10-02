@@ -33,6 +33,14 @@
     </div>
 
     <div class="form-group">
+        <label asp-for="job.CompanyName" class="col-lg-2 control-label"></label>
+        <div class="col-lg-10">
+            <input class="form-control" asp-for="job.CompanyName" />
+            <span class="text-danger" asp-validation-for="job.CompanyName"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
         <label asp-for="job.JobTitle" class="col-lg-2 control-label"></label>
         <div class="col-lg-10">
             <input class="form-control" asp-for="job.JobTitle" />
@@ -121,13 +129,7 @@
 
     </div>
 
-    <div class="form-group">
-        <label asp-for="job.CompanyName" class="col-lg-2 control-label"></label>
-        <div class="col-lg-10">
-            <input class="form-control" asp-for="job.CompanyName" />
-            <span class="text-danger" asp-validation-for="job.CompanyName"></span>
-        </div>
-    </div>
+
 
 
     <div class="form-group">
